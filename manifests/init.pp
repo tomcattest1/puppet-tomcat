@@ -44,5 +44,6 @@
 #
 class tomcat {
   class { '::tomcat::install': }
+  -> class { '::tomcat::config': }
   ~> class { '::tomcat::service': }
 }
