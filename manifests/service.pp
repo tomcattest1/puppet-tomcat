@@ -4,7 +4,7 @@ class tomcat::service(
   Boolean $service_enable = $::tomcat::service_enable,
 ) {
   service { 'tomcat_service':
-    ensure => $service_ensure,
+    ensure => $service_state,
     name   => $service_name,
     enable => $service_enable,
   }
