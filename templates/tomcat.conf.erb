@@ -1,0 +1,39 @@
+# This variable is used to figure out if config is loaded or not.
+TOMCAT_CFG_LOADED="<%= @tomcat_cfg_loaded %>"
+
+# In new-style instances, if CATALINA_BASE isn't specified, it will
+# be constructed by joining TOMCATS_BASE and NAME.
+TOMCATS_BASE="<%= @tomcats_base %>"
+
+# Where your java installation lives
+JAVA_HOME="<%= @java_home %>"
+JAVA_OPTS="-Xms<%= @xms %> -Xmx<%= @xmx %>"
+# Where your tomcat installation lives
+CATALINA_BASE="<%= @catalina_base %>"
+CATALINA_HOME="<%= @catalina_home %>"
+
+JASPER_HOME="<%= @jasper_home %>"
+
+# System-wide tmp
+CATALINA_TMPDIR="<%= @catalina_tmpdir %>"
+
+TOMCAT_USER="<%= @tomcat_user %>"
+# You can pass some parameters to java here if you wish to
+#JAVA_OPTS="-Xminf0.1 -Xmaxf0.3"
+
+# Use JAVA_OPTS to set java.library.path for libtcnative.so
+#JAVA_OPTS="-Djava.library.path=/usr/lib"
+
+# You can change your tomcat locale here
+#LANG="en_US"
+
+# Run tomcat under the Java Security Manager
+SECURITY_MANAGER="<%= @security_manager %>"
+SHUTDOWN_WAIT="<%= @shutdown_wait %>"
+
+SHUTDOWN_VERBOSE="<%= @shutdown_verbose %>"
+CATALINA_PID="<%= @catalina_pid %>"
+
+# If you wish to further customize your tomcat environment,
+# put your own definitions here
+# (i.e. LD_LIBRARY_PATH for some jdbc drivers)

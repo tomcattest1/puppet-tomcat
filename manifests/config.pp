@@ -6,12 +6,12 @@ class tomcat::config(
  String $config_mode     = $::tomcat::config_mode,
 ) {
   file { 'tomcat_config_file':
-    ensure => $config_ensure,
-    name   => $config_name,
-    path   => $config_path,
-    owner  => $config_owner,
-    group  => $config_group,
-    mode   => $config_mode,
-    source => 'puppet:///modules/tomcat/tomcat.conf',
+    ensure  => $config_ensure,
+    name    => $config_name,
+    path    => $config_path,
+    owner   => $config_owner,
+    group   => $config_group,
+    mode    => $config_mode,
+    content => template("${module_name}/tomcat.conf.erb"),
   }
 }
