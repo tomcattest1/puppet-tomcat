@@ -42,7 +42,19 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class tomcat {
+class tomcat(
+  Array $packages         = $::tomcat::params::packages,
+  String $package_ensure  = $::tomcat::params::package_ensure,
+  String $config_ensure   = $::tomcat::params::config_ensure,
+  String $config_name     = $::tomcat::params::config_name,
+  String $config_path     = $::tomcat::params::config_path,
+  String $config_owner    = $::tomcat::params::config_owner,
+  String $config_group    = $::tomcat::params::group,
+  String $config_mode     = $::tomcat::params::mode,
+  String $service_name    = $::tomcat::params::service_name,
+  String $service_state   = $::tomcat::params::service_state,
+  Boolean $service_enable = $::tomcat::params::service_enable,
+) inherits ::tomcat::params {
   class { '::tomcat::install': }
   -> class { '::tomcat::config': }
   ~> class { '::tomcat::service': }
