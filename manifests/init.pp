@@ -70,6 +70,8 @@ class tomcat(
   String $catalina_pid       = $::tomcat::params::catalina_pid,
 ) inherits ::tomcat::params {
   class { '::tomcat::install': }
-  -> class { '::tomcat::config': }
+  -> class { '::tomcat::config': 
+       shutdown_wait => 60,
+     }
   ~> class { '::tomcat::service': }
 }
