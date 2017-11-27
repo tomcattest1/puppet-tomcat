@@ -15,7 +15,7 @@ class tomcat::config(
  String $catalina_tmpdir    = $::tomcat::catalina_tmpdir,
  String $tomcat_user        = $::tomcat::tomcat_user,
  Boolean $security_manager  = $::tomcat::security_manager,
- Integer $shutdown_wait     = $::tomcat::shutdown_wait,
+ Integer $shutdown_wait     = 50,
  Boolean $shutdown_verbose  = $::tomcat::shutdown_verbose,
  String $catalina_pid       = $::tomcat::catalina_pid, 
 ) {
