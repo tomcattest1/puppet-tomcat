@@ -24,4 +24,5 @@ class tomcat::params {
  $security_manager  = false
  $shutdown_wait     = 30
  $shutdown_verbose  = false
+ $deploy_path       = '/var/lib/tomcat/webapps'
 }
