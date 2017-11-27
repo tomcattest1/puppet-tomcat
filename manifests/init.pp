@@ -65,7 +65,7 @@ class tomcat(
   String $catalina_tmpdir    = $::tomcat::params::catalina_tmpdir,
   String $tomcat_user        = $::tomcat::params::tomcat_user,
   Boolean $security_manager  = $::tomcat::params::security_manager,
-  Integer $shutdown_wait     = 40
+  Integer $shutdown_wait     = 40,
   Boolean $shutdown_verbose  = $::tomcat::params::shutdown_verbose,
   String $catalina_pid       = $::tomcat::params::catalina_pid,
 ) inherits ::tomcat::params {
