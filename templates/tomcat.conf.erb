@@ -3,21 +3,21 @@ TOMCAT_CFG_LOADED="<%= @tomcat_cfg_loaded %>"
 
 # In new-style instances, if CATALINA_BASE isn't specified, it will
 # be constructed by joining TOMCATS_BASE and NAME.
-TOMCATS_BASE=<%= @tomcats_base %>
+TOMCATS_BASE="<%= @tomcats_base %>"
 
 # Where your java installation lives
-JAVA_HOME=<%= @java_home %>
-JAVA_OPTS=-Xms<%= @xms %> -Xmx<%= @xmx %>
+JAVA_HOME="<%= @java_home %>"
+JAVA_OPTS="-Xms<%= @xms %> -Xmx<%= @xmx %>"
 # Where your tomcat installation lives
-CATALINA_BASE=<%= @catalina_base %>
-CATALINA_HOME=<%= @catalina_home %>
+CATALINA_BASE="<%= @catalina_base %>"
+CATALINA_HOME="<%= @catalina_home %>"
 
-JASPER_HOME=<%= @jasper_home %>
+JASPER_HOME="<%= @jasper_home %>"
 
 # System-wide tmp
-CATALINA_TMPDIR=<%= @catalina_tmpdir %>
+CATALINA_TMPDIR="<%= @catalina_tmpdir %>"
 
-TOMCAT_USER=<%= @tomcat_user %>
+TOMCAT_USER="<%= @tomcat_user %>"
 # You can pass some parameters to java here if you wish to
 #JAVA_OPTS="-Xminf0.1 -Xmaxf0.3"
 
@@ -28,11 +28,11 @@ TOMCAT_USER=<%= @tomcat_user %>
 #LANG="en_US"
 
 # Run tomcat under the Java Security Manager
-SECURITY_MANAGER=<%= @security_manager %>
-SHUTDOWN_WAIT=<%= @shutdown_wait %>
+SECURITY_MANAGER="<%= @security_manager %>"
+SHUTDOWN_WAIT="<%= @shutdown_wait %>"
 
-SHUTDOWN_VERBOSE=<%= @shutdown_verbose %>
-CATALINA_PID=<%= @catalina_pid %>
+SHUTDOWN_VERBOSE="<%= @shutdown_verbose %>"
+CATALINA_PID="<%= @catalina_pid %>"
 
 # If you wish to further customize your tomcat environment,
 # put your own definitions here
