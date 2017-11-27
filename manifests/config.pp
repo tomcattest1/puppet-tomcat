@@ -17,6 +17,7 @@ class tomcat::config(
  Boolean $security_manager  = $::tomcat::security_manager,
  Integer $shutdown_wait     = $::tomcat::shutdown_wait,
  Boolean $shutdown_verbose  = $::tomcat::shutdown_verbose,
+ String $catalina_pid       = $::tomcat::catalina_pid, 
 ) {
   file { 'tomcat_config_file':
     ensure  => $config_ensure,
