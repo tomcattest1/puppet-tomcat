@@ -69,7 +69,6 @@ class tomcat(
   Boolean $shutdown_verbose  = $::tomcat::params::shutdown_verbose,
   String $catalina_pid       = $::tomcat::params::catalina_pid,
   String $deploy_path        = $::tomcat::params::deploy_path,
-  String $deploy_url,
 ) inherits ::tomcat::params {
   class { '::tomcat::install': }
   -> class { '::tomcat::config': 
