@@ -12,6 +12,6 @@ class tomcat::config(
     owner   => $config_owner,
     group   => $config_group,
     mode    => $config_mode,
-    content => template("${module_name}/tomcat.conf.erb"),
+    content => template('tomcat/tomcat.conf.erb'),
   }
 }
