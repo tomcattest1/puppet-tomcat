@@ -25,4 +25,5 @@ class tomcat::params {
  $shutdown_wait     = 30
  $shutdown_verbose  = false
  $deploy_path       = '/var/lib/tomcat/webapps'
+ $checksum          = 'md5'
 }

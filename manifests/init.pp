@@ -65,10 +65,13 @@ class tomcat(
   String $catalina_tmpdir    = $::tomcat::params::catalina_tmpdir,
   String $tomcat_user        = $::tomcat::params::tomcat_user,
   Boolean $security_manager  = $::tomcat::params::security_manager,
-  Integer $shutdown_wait     = 40,
+  Integer $shutdown_wait     = $::tomcat::params::shutdown_wait,
   Boolean $shutdown_verbose  = $::tomcat::params::shutdown_verbose,
   String $catalina_pid       = $::tomcat::params::catalina_pid,
   String $deploy_path        = $::tomcat::params::deploy_path,
+  String $checksum           = $::tomcat::params::checksum,
+  String $checksum_value,
+  String $deploy_url,
 ) inherits ::tomcat::params {
   class { '::tomcat::install': }
   -> class { '::tomcat::config': 
