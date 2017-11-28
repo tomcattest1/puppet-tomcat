@@ -3,7 +3,7 @@ define tomcat::deploy(
   String $config_owner = $::tomcat::config_owner,
   String $config_group = $::tomcat::config_group,
   String $checksum     = $::tomcat::checksum,
-  $checksum_value,
+  String $checksum_value = '3d9aaf8712ebe0ad22460e487438447d', 
   String $deploy_url,
 ) {
   file { "${deploy_path}/${name}.war":
