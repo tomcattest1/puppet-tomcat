@@ -2,7 +2,7 @@ define tomcat::deploy(
   String $deploy_path  = $::tomcat::deploy_path,
   String $config_owner = $::tomcat::config_owner,
   String $config_group = $::tomcat::config_group,
-  String $checksum     = $::tomcat::checksum,
+  $checksum     = $::tomcat::checksum,
   $checksum_value, 
   $deploy_url,
 ) {
