@@ -7,9 +7,9 @@ define tomcat::deploy(
   String $deploy_url,
 ) {
   file { "${deploy_path}/${name}.war":
-    source         => "${deploy_url}",
-    owner          => "${config_owner}",
-    group          => "${config_group}",
+    source          => $deploy_url,
+    #owner          => "${config_owner}",
+    #group          => "${config_group}",
     #checksum       => $checksum,
     #checksum_value => $checksum_value,
     notify         => Exec['purge_context'],
