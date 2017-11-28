@@ -3,7 +3,7 @@ define tomcat::deploy(
   String $config_owner = $::tomcat::config_owner,
   String $config_group = $::tomcat::config_group,
   String $checksum     = $::tomcat::checksum,
-  String $checksum_value,
+  $checksum_value,
   String $deploy_url,
 ) {
   file { "${deploy_path}/${name}.war":
@@ -16,7 +16,7 @@ define tomcat::deploy(
   }
 
   exec { 'purge_context':
-    path        => ['/bin', '/usr/bin/', '/usr/sbin'],
+    path        => ['/bin', '/usr/bin', '/usr/sbin'],
     command     => "rm -rf ${deploy_path}/${name}.war",
     refreshonly => true,
     notify      => Service['tomcat_service'],
