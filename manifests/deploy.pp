@@ -2,7 +2,7 @@ define tomcat::deploy(
   String $deploy_path  = $::tomcat::deploy_path,
   String $config_owner = $::tomcat::config_owner,
   String $config_group = $::tomcat::config_group,
-  $checksum     = $::tomcat::checksum,
+  Hash $checksum       = $::tomcat::checksum,
   $checksum_value, 
   $deploy_url,
 ) {
@@ -11,7 +11,7 @@ define tomcat::deploy(
     owner           => $config_owner,
     group           => $config_group,
     checksum        => $checksum,
-    checksum_value  => $checksum_value,
+    #checksum_value  => $checksum_value,
     notify          => Exec['purge_context'],
   }
 
