@@ -11,7 +11,7 @@ define tomcat::deploy(
     owner           => $config_owner,
     group           => $config_group,
     checksum       => $checksum,
-    checksum_value => $checksum_value,
+    #checksum_value => $checksum_value,
     notify          => Exec['purge_context'],
   }
 
