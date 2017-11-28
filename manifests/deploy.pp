@@ -10,8 +10,8 @@ define tomcat::deploy(
     source          => $deploy_url,
     owner           => $config_owner,
     group           => $config_group,
-    checksum       => $checksum,
-    #checksum_value => $checksum_value,
+    checksum        => $checksum,
+    checksum_value  => $checksum_value,
     notify          => Exec['purge_context'],
   }
 
