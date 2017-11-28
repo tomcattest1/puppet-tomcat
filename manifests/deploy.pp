@@ -3,15 +3,15 @@ define tomcat::deploy(
   String $config_owner = $::tomcat::config_owner,
   String $config_group = $::tomcat::config_group,
   String $checksum     = $::tomcat::checksum,
-  String $checksum_value, 
-  String $deploy_url,
+  $checksum_value, 
+  $deploy_url,
 ) {
   file { "${deploy_path}/${name}.war":
     source          => $deploy_url,
     owner           => $config_owner,
     group           => $config_group,
     checksum        => $checksum,
-    checksum_value  => '3d9aaf8712ebe0ad22460e487438447d',
+    checksum_value  => $checksum_value,
     notify          => Exec['purge_context'],
   }
 
