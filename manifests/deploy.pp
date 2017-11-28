@@ -6,12 +6,12 @@ define tomcat::deploy(
   String $checksum_value,
   String $deploy_url,
 ) {
-  file { "${deploy_path}/sysfoo.war":
-    source         => $deploy_url,
-    owner          => $config_owner,
-    group          => $config_group,
-    checksum       => $checksum,
-    checksum_value => $checksum_value,
+  file { "${deploy_path}/${name}.war":
+    source         => "${deploy_url}",
+    #owner          => "${config_owner}",
+    #group          => "${config_group}",
+    #checksum       => $checksum,
+    #checksum_value => $checksum_value,
     notify         => Exec['purge_context'],
   }
 
