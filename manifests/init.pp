@@ -70,8 +70,6 @@ class tomcat(
   String $catalina_pid       = $::tomcat::params::catalina_pid,
   String $deploy_path        = $::tomcat::params::deploy_path,
   String $checksum           = $::tomcat::params::checksum,
-  String $checksum_value,
-  String $deploy_url,
 ) inherits ::tomcat::params {
   class { '::tomcat::install': }
   -> class { '::tomcat::config': 
