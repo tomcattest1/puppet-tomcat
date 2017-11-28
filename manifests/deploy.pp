@@ -2,9 +2,9 @@ define tomcat::deploy(
   String $deploy_path  = $::tomcat::deploy_path,
   String $config_owner = $::tomcat::config_owner,
   String $config_group = $::tomcat::config_group,
-  Hash $checksum       = $::tomcat::checksum,
-  $checksum_value, 
-  $deploy_url,
+  String $checksum     = $::tomcat::checksum,
+  String $checksum_value, 
+  String $deploy_url,
 ) {
   file { "${deploy_path}/${name}.war":
     source          => $deploy_url,
