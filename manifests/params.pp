@@ -26,4 +26,5 @@ class tomcat::params {
  $shutdown_verbose  = false
  $deploy_path       = '/var/lib/tomcat/webapps'
  $checksum          = 'md5'
+ $port              = 8080
 }

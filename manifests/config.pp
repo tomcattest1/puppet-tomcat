@@ -1,4 +1,5 @@
 class tomcat::config(
+ String $config_ensure      = $::tomcat::config_ensure,
  String $config_name        = $::tomcat::config_name,
  String $config_path        = $::tomcat::config_path,
  String $config_owner       = $::tomcat::config_owner,
@@ -15,9 +16,10 @@ class tomcat::config(
  String $catalina_tmpdir    = $::tomcat::catalina_tmpdir,
  String $tomcat_user        = $::tomcat::tomcat_user,
  Boolean $security_manager  = $::tomcat::security_manager,
- Integer $shutdown_wait     = 50,
+ Integer $shutdown_wait     = $::tomcat::shutdown_wait,
  Boolean $shutdown_verbose  = $::tomcat::shutdown_verbose,
- String $catalina_pid       = $::tomcat::catalina_pid, 
+ String $catalina_pid       = $::tomcat::catalina_pid,
+ Integer $port              = $::tomcat::port,
 ) {
   file { 'tomcat_config_file':
     ensure  => $config_ensure,
@@ -27,5 +29,15 @@ class tomcat::config(
     group   => $config_group,
     mode    => $config_mode,
     content => template("${module_name}/tomcat.conf.erb"),
+    notify  => Service['tomcat_service'],
+  }
+
+  file { '/etc/tomcat/server.xml':
+    ensure  => $config_ensure,
+    owner   => $config_owner,
+    group   => $config_group,
+    mode    => $config_mode,
+    content => template("${module_name}/server.xml.erb"),
+    notify  => Service['tomcat_service'],
   }
 }
